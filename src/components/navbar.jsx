@@ -24,6 +24,8 @@ const Navbar = () => {
       opacity: 1,
       y: 0,
       transition: {
+        duration: 0.8,
+        ease: "easeInOut",
         staggerChildren: 0.1,
       },
     },
@@ -31,7 +33,13 @@ const Navbar = () => {
 
   const linkVariants = {
     hidden: { opacity: 0, y: -50 },
-    visible: { opacity: 1, y: 0 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 1.1,
+      },
+    },
   };
 
   return (
@@ -48,16 +56,15 @@ const Navbar = () => {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-          initial="hidden"
-          animate="visible"
-          exit="hidden"
-          variants={containerVariants}
-          className="fixed inset-0 z-20 flex flex-col items-center justify-center bg-black text-white">
+            initial="hidden"
+            animate="visible"
+            exit="hidden"
+            variants={containerVariants}
+            className="fixed inset-0 z-20 flex flex-col items-center justify-center bg-black text-white"
+          >
             <ul className="space-y-6 text-2xl">
               {LINKS.map((link) => (
-                <motion.li 
-                variants={linkVariants}
-                key={link.id}>
+                <motion.li variants={linkVariants} key={link.id}>
                   <a
                     href={`#${link.id}`}
                     onClick={toggleMenu}
