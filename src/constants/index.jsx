@@ -72,7 +72,7 @@ export const SCHOOLS = [
     description: (
       <>
         "Schakeljaar - Alfa College, Groningen
-        <br /> Deploma: behalad"
+        <br /> Diploma: behalad"
       </>
     ),
   },
