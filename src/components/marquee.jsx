@@ -7,9 +7,9 @@ const Marquee = () => {
       <div className="flex overflow-hidden whitespace-nowrap">
         {[...Array(2)].map((_, i) => (
           <motion.h1
-          initial={{x: "-100%" }}
-          animate={{x: "0" }}
-          transition={{ repeat: Infinity, ease: "linear", duration: 7.213}}
+            initial={{ x: "-100%" }}
+            animate={{ x: "0" }}
+            transition={{ repeat: Infinity, ease: "linear", duration: 16 }}
             key={i}
             className="py-2 text-3xl font-bold leading-none tracking-tighter lg:text-7xl"
           >
