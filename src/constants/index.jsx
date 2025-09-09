@@ -47,8 +47,8 @@ export const SCHOOLS = [
     year: "augustus 2022 - juni 2023",
     description: (
       <>
-        "MBO-4 - Technicus engineering - Firda, Leeuwarden
-        <br /> Diploma niet behaald"
+        MBO-4 - Technicus engineering - Firda, Leeuwarden
+        <br /> Niet afgerond
       </>
     ),
   },
@@ -58,8 +58,8 @@ export const SCHOOLS = [
     year: "augustus 2021 - juni 2022",
     description: (
       <>
-        "Schakeljaar - Alfa College, Groningen
-        <br /> Diploma: behaald"
+        Schakeljaar - Alfa College, Groningen
+        <br /> Diploma: behaald
       </>
     ),
   },
@@ -68,8 +68,8 @@ export const SCHOOLS = [
     role: "Student",
     description: (
       <>
-        "Jaar 1 tot 8 - Allowdin high school, Kabul, Afghanistan
-        <br /> Afgestudeerd in 2018"
+        Jaar 1 tot 8 - Allowdin high school, Kabul, Afghanistan
+        <br /> Afgestudeerd in 2018
       </>
     ),
   },
