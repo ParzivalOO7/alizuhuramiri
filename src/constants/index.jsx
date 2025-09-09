@@ -2,6 +2,8 @@ import { FaGithub, FaLinkedin } from "react-icons/fa6";
 
 import project1 from "../assets/project1.webp";
 import project2 from "../assets/project2.webp";
+import project3 from "../assets/project3.png";
+import { link, title } from "framer-motion/client";
 
 export const LINKS = [
   { id: "projects", name: "projecten" },
@@ -11,7 +13,7 @@ export const LINKS = [
 ];
 
 export const MARQUEE_TEXT =
-  "HTML/ CSS/ React/ Javascript/ HTML/ CSS/ React/ Javascript";
+  "HTML/ CSS/ React/ Javascript/ HTML/ CSS/ React/ Javascript/ HTML/ CSS/ React/ Javascript";
 
 export const PROJECTS = [
   {
@@ -27,6 +29,13 @@ export const PROJECTS = [
     description: "Mijn eerste webgame gemaakt met js.",
     imgSrc: project2,
     link: "https://github.com/ParzivalOO7/eerste-webgame",
+  },
+  {
+    id: 3,
+    title: "guess my number",
+    description: "cool webgame",
+    imgSrc: project3,
+    link: "https://github.com/ParzivalOO7/Guess-My-Number",
   },
 ];
 

@@ -1,5 +1,5 @@
 {
-  "homepage": "https://parzivaloo7.github.io/alizuhuramiri",
+  "homepage": "https://parzivaloo7.github.io/alizuhuramiri/",
   "name": "portfolio",
   "private": true,
   "version": "0.0.0",
@@ -7,7 +7,7 @@
   "scripts": {
     "start": "react-scripts start",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
+    "deploy": "gh-pages -d dist",
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
