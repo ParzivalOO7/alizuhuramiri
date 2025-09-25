@@ -3,7 +3,7 @@ import { FaGithub, FaLinkedin } from "react-icons/fa6";
 import project1 from "../assets/project1.webp";
 import project2 from "../assets/project2.webp";
 import project3 from "../assets/project3.webp";
-import { link, title } from "framer-motion/client";
+// import { link, title } from "framer-motion/client";
 
 export const LINKS = [
   { id: "projects", name: "projecten" },
