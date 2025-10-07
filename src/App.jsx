@@ -3,8 +3,9 @@ import Hero from "./components/hero";
 import Marquee from "./components/marquee";
 import Projects from "./components/projects";
 import About from "./components/about";
-import Work from "./components/study";
+import Schools from "./components/study";
 import Contact from "./components/contact";
+import Experience from "./components/experience";
 
 const App = () => {
   return (
@@ -14,7 +15,8 @@ const App = () => {
       <Marquee />
       <Projects />
       <About />
-      <Work />
+      <Schools />
+      <Experience />
       <Contact />
     </main>
   );

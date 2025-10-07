@@ -1,6 +1,6 @@
 import { SCHOOLS } from "../constants";
 
-const Work = () => {
+const Schools = () => {
   return (
     <section id="study">
       <h2 className="my-10 text-center text-3xl lg:text-8xl">Opleidingen</h2>
@@ -26,4 +26,4 @@ const Work = () => {
   );
 };
 
-export default Work;
+export default Schools;

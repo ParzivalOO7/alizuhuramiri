@@ -31,7 +31,7 @@ const About = () => {
           },
           fpsLimit: 60,
           particles: {
-            number: { value: 80 }, // iets minder, rustiger
+            number: { value: 69 }, // iets minder, rustiger
             color: { value: "#ffffff" },
             size: { value: 2 },
             move: { enable: true, speed: 0.8 },
@@ -51,9 +51,6 @@ const About = () => {
 };
 
 export default About;
-
-
-
 
 // import { ABOUT } from "../constants/index";
 // const About = () => {

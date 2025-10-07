@@ -3,12 +3,14 @@ import { FaGithub, FaLinkedin } from "react-icons/fa6";
 import project1 from "../assets/project1.webp";
 import project2 from "../assets/project2.webp";
 import project3 from "../assets/project3.webp";
+import project4 from "../assets/project4.webp";
 // import { link, title } from "framer-motion/client";
 
 export const LINKS = [
   { id: "projects", name: "projecten" },
   { id: "about", name: "over mij" },
   { id: "study", name: "opleidingen" },
+  { id: "experience", name: "werkervaringen" },
   { id: "contact", name: "contact" },
 ];
 
@@ -21,21 +23,28 @@ export const PROJECTS = [
     title: "som-som-magie",
     description: "som-som-magie gemaakt met html, css en js.",
     imgSrc: project1,
-    link: "https://github.com/ParzivalOO7/somsommagie",
+    link: "https://parzivaloo7.github.io/Som-Som-Magie/#",
   },
   {
     id: 2,
     title: "Word Scramble",
     description: "Mijn eerste webgame gemaakt met js.",
     imgSrc: project2,
-    link: "https://github.com/ParzivalOO7/eerste-webgame",
+    link: "https://parzivaloo7.github.io/Eerste-Webgame/",
   },
   {
     id: 3,
     title: "Guess-My-Number",
     description: "Cool webgame.",
     imgSrc: project3,
-    link: "https://github.com/ParzivalOO7/Guess-My-Number",
+    link: "https://parzivaloo7.github.io/Guess-My-Number/",
+  },
+  {
+    id: 4,
+    title: "Weather-App",
+    description: "simple weather app.",
+    imgSrc: project4,
+    link: "https://parzivaloo7.github.io/Weather-App/",
   },
 ];
 
@@ -80,6 +89,15 @@ export const SCHOOLS = [
         <br /> Afgestudeerd in 2018
       </>
     ),
+  },
+];
+
+export const EXPERIENCE = [
+  {
+    company: "Afosto",
+    startDate: "September 2025",
+    endDate: "February 2026",
+    description: <>Loop stage als frontend developer</>,
   },
 ];
 
