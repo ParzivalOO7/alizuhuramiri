@@ -26,7 +26,7 @@ const Contact = () => {
         ))}
       </div>
       <p className="my-8 text-center text-gray-400">
-        &copy; compileTab. All rights reserved.
+        &copy; All rights reserved.
       </p>
     </section>
   );

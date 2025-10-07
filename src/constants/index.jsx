@@ -107,7 +107,7 @@ export const SOCIAL_MEDIA_LINKS = [
     icon: <FaGithub fontSize={26} className="hover:opacity-80" />,
   },
   {
-    href: "https://www.linkedin.com/",
+    href: "hhttps://www.linkedin.com/in/ali-zuhur-amiri-404114365/",
     icon: <FaLinkedin fontSize={26} className="hover:opacity-80" />,
   },
 ];

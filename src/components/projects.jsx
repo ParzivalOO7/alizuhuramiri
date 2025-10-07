@@ -3,8 +3,9 @@ import { PROJECTS } from "../constants";
 const Projects = () => {
   return (
     <section className="p-8" id="projects">
-      <h2 className="my-10 text-center text-3xl lg:text-8xl">Mijn projecten</h2>
-      {/* <div className="columns-1 gap-4 md:columns-2 lg:columns-3"> */}
+      <h2 className="my-10 text-center text-3xl lg:text-8xl">Mijn Projecten</h2>
+
+      {/* Responsive grid for cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {PROJECTS.map((project) => (
           <a
@@ -12,20 +13,28 @@ const Projects = () => {
             href={project.link}
             target="_blank"
             rel="noopener noreferrer"
-            // className="block mb-8 mr-4"
-            className="block"
+            className="group block h-full transform transition-transform duration-300 hover:scale-[1.03]"
           >
-            {/* <div className="relative mb4 overflow-hidden rounded-lg bg-white shadow-lg"> */}
-            <div className="relative flex flex-col h-full overflow-hidden rounded-lg bg-white shadow-lg">
-              <img
-                src={project.imgSrc}
-                alt={project.title}
-                className="h-48 w-full object-scale-down" //hier was hoogte h auto
-              />
-              {/* <div className="absolute bottom-0 left-0 right-0 m-8 p-8 text-black bg-slate-300 gap-10"> */}
-              <div className="mt-auto p-6 bg-slate-300">
-                <h3 className="text-3xl">{project.title}</h3>
-                <p className="max-w-xs text-m">{project.description}</p>
+            {/* Card container */}
+            <div className="flex flex-col h-full overflow-hidden rounded-2xl bg-gradient-to-b from-slate-800 to-slate-900 shadow-lg hover:shadow-2xl transition-shadow duration-300">
+              {/* Image */}
+              <div className="overflow-hidden">
+                <img
+                  src={project.imgSrc}
+                  alt={project.title}
+                  className="h-52 w-full object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+              </div>
+
+              {/* Text section */}
+              <div className="flex flex-col justify-between flex-1 p-6">
+                <h3 className="text-2xl font-semibold text-lime-300 mb-2">
+                  {project.title}
+                </h3>
+                <p className="text-gray-300 mb-4">{project.description}</p>
+                <span className="mt-auto text-sm font-medium opacity-80 group-hover:opacity-100 transition-opacity">
+                  Bekijk project →
+                </span>
               </div>
             </div>
           </a>
