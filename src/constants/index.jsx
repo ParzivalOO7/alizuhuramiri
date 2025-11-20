@@ -96,7 +96,7 @@ export const EXPERIENCE = [
   {
     company: "Afosto",
     startDate: "September 2025",
-    endDate: "February 2026",
+    endDate: "November 2025",
     description: <>Loop stage als frontend developer</>,
   },
 ];
