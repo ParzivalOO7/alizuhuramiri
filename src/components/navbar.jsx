@@ -60,7 +60,7 @@ const Navbar = () => {
             animate="visible"
             exit="hidden"
             variants={containerVariants}
-            className="fixed inset-0 z-20 flex flex-col items-center justify-center bg-white text-black"
+            className="fixed inset-0 z-20 flex flex-col justify-center bg-white text-black"
           >
             <ul className="space-y-6 group">
               {LINKS.map((link) => (
