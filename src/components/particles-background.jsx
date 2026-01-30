@@ -20,14 +20,14 @@ const ParticlesBackground = () => {
         },
         fpsLimit: 60,
         particles: {
-          number: { value: 60 },
-          color: { value: "#000000" }, // black
-          size: { value: 2 },
-          move: { enable: true, speed: 0.8 },
+          number: { value: 40 },
+          color: { value: "#000000" },
+          size: { value: 1 },
+          move: { enable: true, speed: 0.4 },
           links: {
             enable: true,
             color: "#000000",
-            opacity: 0.3,
+            opacity: 0.2,
             distance: 150,
           },
         },
