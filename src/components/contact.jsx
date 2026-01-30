@@ -2,14 +2,14 @@ import { CONTACT, SOCIAL_MEDIA_LINKS } from "../constants";
 
 const Contact = () => {
   return (
-    <section id="contact">
+    <section className="bg-white" id="contact">
       <div className="mx-auto max-w-6xl">
-        <p className="my-10 text-center text-3xl lg:text-8xl">Contact</p>
-        <p className="p-4 text-center text-xl">{CONTACT.text}</p>
-        <p className="my-4 text-center text-2xl font-medium text-lime-300 lg:pt-6 lg:text-5xl">
+        <p className="my-10 text-center text-3xl lg:text-8xl text-black">Contact</p>
+        <p className="p-4 text-center text-xl text-black">{CONTACT.text}</p>
+        <p className="my-4 text-center text-2xl font-medium text-black lg:pt-6 lg:text-5xl">
           <a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a>
         </p>
-        <p className="my-4 text-center text-2xl font-medium text-lime-300 lg:pt-6 lg:text-5xl">
+        <p className="my-4 text-center text-2xl font-medium text-black lg:pt-6 lg:text-5xl">
           <a href={`tel:${CONTACT.phone}`}>{CONTACT.phone}</a>
         </p>
       </div>

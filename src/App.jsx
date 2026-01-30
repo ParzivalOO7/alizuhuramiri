@@ -1,3 +1,4 @@
+import ParticlesBackground from "./components/particles-background";
 import Navbar from "./components/navbar";
 import Hero from "./components/hero";
 import Marquee from "./components/marquee";
@@ -9,7 +10,7 @@ import Experience from "./components/experience";
 
 const App = () => {
   return (
-    <main className="font-light text-white antialiased selection:bg-lime-300 selection:text-black">
+    <main className="font-light text-black antialiased bg-white">
       <Navbar />
       <Hero />
       <Marquee />
@@ -18,6 +19,7 @@ const App = () => {
       <Schools />
       <Experience />
       <Contact />
+      <ParticlesBackground />
     </main>
   );
 };

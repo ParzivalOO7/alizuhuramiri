@@ -45,11 +45,11 @@ const Navbar = () => {
   return (
     <>
       <nav className="fixed right-0 top-0 z-30 p-4">
-        <button onClick={toggleMenu} className="rounded-md p-2">
+        <button onClick={toggleMenu} className="rounded-md p-2 text-black">
           {isOpen ? (
-            <FaTimes className="h-6 w-6" />
+            <FaTimes className="h-6 w-6 text=black" />
           ) : (
-            <FaBars className="h-6 w-6" />
+            <FaBars className="h-6 w-6 text-black" />
           )}
         </button>
       </nav>
@@ -60,15 +60,17 @@ const Navbar = () => {
             animate="visible"
             exit="hidden"
             variants={containerVariants}
-            className="fixed inset-0 z-20 flex flex-col items-center justify-center bg-black text-white"
+            className="fixed inset-0 z-20 flex flex-col items-center justify-center bg-white text-black"
           >
-            <ul className="space-y-6 text-2xl">
+            <ul className="space-y-6 group">
               {LINKS.map((link) => (
                 <motion.li variants={linkVariants} key={link.id}>
                   <a
                     href={`#${link.id}`}
                     onClick={toggleMenu}
-                    className="text-5xl font-semibold uppercase tracking-wide hover:text-lime-300 lg:text-9xl"
+                    className="text-5xl font-semibold uppercase tracking-wide lg:text-9xl
+                    transition-opacity duration-300
+                    group-hover:opacity-30 hover:!opacity-100"
                   >
                     {link.name}
                   </a>
