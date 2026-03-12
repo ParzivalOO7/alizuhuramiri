@@ -94,6 +94,13 @@ export const SCHOOLS = [
 
 export const EXPERIENCE = [
   {
+    company: "Sitesmid",
+    subtitle: "Online marketing en sales automatisering",
+    startDate: "Februari 2026",
+    endDate: "Heden",
+    description: <>Loop stage als frontend developer</>,
+  },
+  {
     company: "Afosto",
     startDate: "September 2025",
     endDate: "November 2025",

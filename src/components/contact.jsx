@@ -1,19 +1,24 @@
 import { CONTACT, SOCIAL_MEDIA_LINKS } from "../constants";
+import { useLanguage } from "../context/LanguageContext";
+import { translations } from "../translations";
 
 const Contact = () => {
+  const { language } = useLanguage();
+  const t = translations[language].contact;
+
   return (
-    <section className="bg-white" id="contact">
-      <div className="mx-auto max-w-6xl">
-        <p className="my-10 text-center text-3xl lg:text-8xl text-black">Contact</p>
-        <p className="p-4 text-center text-xl text-black">{CONTACT.text}</p>
-        <p className="my-4 text-center text-2xl font-medium text-black lg:pt-6 lg:text-5xl">
+    <section className="relative z-10 bg-white" id="contact">
+      <div className="max-w-6xl">
+        <h2 className="my-10 text-xl lg:text-2xl font-semibold text-black px-4 uppercase tracking-widest">{t.heading}</h2>
+        <p className="p-4 text-xl text-black">{t.text}</p>
+        <p className="my-4 text-2xl text-black px-4 lg:pt-6 lg:text-5xl">
           <a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a>
         </p>
-        <p className="my-4 text-center text-2xl font-medium text-black lg:pt-6 lg:text-5xl">
+        <p className="my-4 text-2xl text-black px-4 lg:pt-6 lg:text-5xl">
           <a href={`tel:${CONTACT.phone}`}>{CONTACT.phone}</a>
         </p>
       </div>
-      <div className="mt-20 flex items-center justify-center gap-8">
+      <div className="lg:hidden mt-20 flex items-center justify-start px-4 gap-8">
         {SOCIAL_MEDIA_LINKS.map((link, index) => (
           <a
             key={index}
@@ -25,8 +30,8 @@ const Contact = () => {
           </a>
         ))}
       </div>
-      <p className="my-8 text-center text-gray-400">
-        &copy; All rights reserved.
+      <p className="my-8 px-4 text-gray-400 text-center">
+        &copy; 2026 Ali Zuhur Amiri
       </p>
     </section>
   );

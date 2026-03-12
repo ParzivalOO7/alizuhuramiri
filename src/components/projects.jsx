@@ -1,44 +1,42 @@
 import { PROJECTS } from "../constants";
+import { useLanguage } from "../context/LanguageContext";
+import { translations } from "../translations";
 
 const Projects = () => {
+  const { language } = useLanguage();
+  const t = translations[language].projects;
+
   return (
-    <section className="p-8 bg-white" id="projects">
-      <h1 className="my-10 text-center text-3xl lg:text-8xl">Mijn Projecten</h1>
+    <section className="relative z-10 px-4 py-8 bg-white" id="projects">
+      <h2 className="my-10 text-xl lg:text-2xl font-semibold text-black uppercase tracking-widest">{t.heading}</h2>
 
-      {/* Responsive grid for cards */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {PROJECTS.map((project) => (
-          <a
-            key={project.id}
-            href={project.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group block h-full transform transition-transform duration-300 hover:scale-[1.03]"
-          >
-            {/* Card container */}
-            <div className="flex flex-col h-full overflow-hidden rounded-2xl bg-gradient-to-b from-slate-800 to-slate-900 shadow-lg hover:shadow-2xl transition-shadow duration-300">
-              {/* Image */}
-              <div className="overflow-hidden">
-                <img
-                  src={project.imgSrc}
-                  alt={project.title}
-                  className="h-52 w-full object-cover transition-transform duration-500 group-hover:scale-110"
-                />
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl">
+        {PROJECTS.map((project) => {
+          const translatedItem = t.items.find((i) => i.id === project.id);
+          return (
+            <a
+              key={project.id}
+              href={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group block"
+            >
+              <div className="overflow-hidden rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow duration-300">
+                <div className="p-5 bg-white">
+                  <h3 className="text-lg font-semibold text-black mb-1">
+                    {project.title}
+                  </h3>
+                  <p className="text-sm text-gray-500 mb-3">
+                    {translatedItem ? translatedItem.description : project.description}
+                  </p>
+                  <span className="text-xs font-medium text-black group-hover:underline">
+                    {language === "nl" ? "Bekijk project →" : "View project →"}
+                  </span>
+                </div>
               </div>
-
-              {/* Text section */}
-              <div className="flex flex-col justify-between flex-1 p-6">
-                <h3 className="text-2xl font-semibold text-white mb-2">
-                  {project.title}
-                </h3>
-                <p className="text-gray-300 mb-4">{project.description}</p>
-                <span className="mt-auto text-sm font-medium opacity-80 group-hover:opacity-100 transition-opacity text-white">
-                  Bekijk project →
-                </span>
-              </div>
-            </div>
-          </a>
-        ))}
+            </a>
+          );
+        })}
       </div>
     </section>
   );

@@ -13,7 +13,7 @@ const ParticlesBackground = () => {
       options={{
         fullScreen: {
           enable: true,
-          zIndex: 0, // particles layer
+          zIndex: 0,
         },
         background: {
           color: { value: "transparent" },

@@ -1,14 +1,18 @@
-import { ABOUT } from "../constants/index";
+import { useLanguage } from "../context/LanguageContext";
+import { translations } from "../translations";
 
 const About = () => {
+  const { language } = useLanguage();
+  const t = translations[language].about;
+
   return (
     <section
       id="about"
-      className="relative py-20 w-full flex items-center justify-center"
+      className="relative z-10 py-20 w-full bg-white"
     >
-      <div className="relative z-10 text-center text-black">
-        <h1 className="font-medium my-10 text-3xl lg:text-8xl">Over mij</h1>
-        <p className="font-light m-8 max-w-6xl mx-auto text-3xl lg:text-4xl">{ABOUT}</p>
+      <div className="relative z-10 max-w-6xl px-4 text-black">
+        <h2 className="my-10 text-xl lg:text-2xl font-semibold uppercase tracking-widest">{t.heading}</h2>
+        <p className="font-light mb-8 text-3xl lg:text-4xl">{t.text}</p>
       </div>
     </section>
   );

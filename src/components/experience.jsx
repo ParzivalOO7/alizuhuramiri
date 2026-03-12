@@ -1,27 +1,31 @@
-import { EXPERIENCE } from "../constants";
+import { useLanguage } from "../context/LanguageContext";
+import { translations } from "../translations";
 
 const Experience = () => {
+  const { language } = useLanguage();
+  const t = translations[language].experience;
+
   return (
-    <section className="bg-white" id="experience">
-      <h1 className="my-10 text-center text-3xl lg:text-8xl text-black">Werkervaring</h1>
-      <div className="mx-auto max-w-6xl">
-        <div className="mx-auto max-w-6xl">
-          {EXPERIENCE.map((exp, id) => (
+    <section className="relative z-10 bg-white" id="experience">
+      <h2 className="my-10 text-xl lg:text-2xl font-semibold text-black px-4 uppercase tracking-widest">{t.heading}</h2>
+      <div className="max-w-6xl">
+        <div className="max-w-6xl">
+          {t.entries.map((exp, id) => (
             <div key={id} className="mx-4 mb-20">
-              {/* Company name styled like the school name */}
               <h2 className="font-medium lg:text-2xl text-black">
                 {exp.company}
               </h2>
+              {exp.subtitle && (
+                <p className="text-sm text-black">{exp.subtitle}</p>
+              )}
 
-              {/* Dates styled like the year */}
               <div className="flex justify-between">
                 <p className="py-4 lg:text-xl text-black">
                   {exp.startDate} – {exp.endDate}
                 </p>
               </div>
 
-              {/* Description styled the same way */}
-              <p className="font-sans text-gray-500">{exp.description}</p>
+              <p className="text-black">{exp.description}</p>
             </div>
           ))}
         </div>
