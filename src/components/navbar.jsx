@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { FaBars, FaTimes, FaCode, FaUser, FaGraduationCap, FaBriefcase, FaEnvelope, FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaBars, FaTimes, FaCode, FaUser, FaGraduationCap, FaBriefcase, FaEnvelope, FaGithub, FaLinkedin, FaMoon, FaSun } from "react-icons/fa";
 import { SOCIAL_MEDIA_LINKS } from "../constants";
 import { AnimatePresence, motion } from "framer-motion";
 import { useLanguage } from "../context/LanguageContext";
@@ -14,11 +14,14 @@ const linkIcons = {
 };
 
 const socialLabels = ["GitHub", "LinkedIn"];
-const socialIcons = [<FaGithub size={18} />, <FaLinkedin size={18} />];
+const socialIcons = [
+  <FaGithub key="github" size={18} />,
+  <FaLinkedin key="linkedin" size={18} />,
+];
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const { language, toggleLanguage } = useLanguage();
+  const { language, toggleLanguage, theme, toggleTheme } = useLanguage();
   const t = translations[language];
 
   const toggleMenu = () => setIsOpen(!isOpen);
@@ -34,34 +37,47 @@ const Navbar = () => {
         <ul className="flex flex-col space-y-5 mt-4">
           {t.links.map((link) => (
             <li key={link.id}>
-              <a
+              <motion.a
                 href={`#${link.id}`}
                 className="text-base capitalize text-black transition-colors duration-200"
+                whileHover={{ x: -4 }}
+                whileTap={{ scale: 0.96 }}
               >
                 {link.name}
-              </a>
+              </motion.a>
             </li>
           ))}
           <li>
-            <button
-              onClick={toggleLanguage}
-              className="text-xs font-medium text-black border border-black rounded px-2 py-1 hover:bg-black hover:text-white transition-colors duration-200"
-            >
-              {language === "nl" ? "EN" : "NL"}
-            </button>
+            <div className="flex items-center gap-2">
+              <button
+                onClick={toggleLanguage}
+                className="text-xs font-medium text-black border border-black rounded px-2 py-1 hover:bg-black hover:text-white transition-colors duration-200"
+              >
+                {language === "nl" ? "EN" : "NL"}
+              </button>
+              <button
+                onClick={toggleTheme}
+                aria-label={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
+                className="p-1 text-black transition-transform duration-200 hover:scale-110"
+              >
+                {theme === "dark" ? <FaSun /> : <FaMoon />}
+              </button>
+            </div>
           </li>
         </ul>
         <ul className="mt-auto flex flex-row space-x-4">
           {SOCIAL_MEDIA_LINKS.map((link, index) => (
             <li key={index}>
-              <a
+              <motion.a
                 href={link.href}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-black transition-colors duration-200"
+                whileHover={{ y: -3 }}
+                whileTap={{ scale: 0.9 }}
               >
                 {link.icon}
-              </a>
+              </motion.a>
             </li>
           ))}
         </ul>
@@ -95,38 +111,51 @@ const Navbar = () => {
             <ul className="flex flex-col space-y-6 mt-4 items-end">
               {t.links.map((link) => (
                 <li key={link.id}>
-                  <a
+                  <motion.a
                     href={`#${link.id}`}
                     onClick={toggleMenu}
                     className="flex items-center gap-4 text-lg capitalize"
+                    whileHover={{ x: -4 }}
+                    whileTap={{ scale: 0.96 }}
                   >
                     {link.name}
                     <span>{linkIcons[link.id]}</span>
-                  </a>
+                  </motion.a>
                 </li>
               ))}
               <li>
-                <button
-                  onClick={toggleLanguage}
-                  className="text-sm font-medium text-black border border-black rounded px-3 py-1 hover:bg-black hover:text-white transition-colors duration-200"
-                >
-                  {language === "nl" ? "EN" : "NL"}
-                </button>
+                <div className="flex items-center gap-3">
+                  <button
+                    onClick={toggleLanguage}
+                    className="text-sm font-medium text-black border border-black rounded px-3 py-1 hover:bg-black hover:text-white transition-colors duration-200"
+                  >
+                    {language === "nl" ? "EN" : "NL"}
+                  </button>
+                  <button
+                    onClick={toggleTheme}
+                    aria-label={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
+                    className="p-1 text-black transition-transform duration-200 hover:scale-110"
+                  >
+                    {theme === "dark" ? <FaSun /> : <FaMoon />}
+                  </button>
+                </div>
               </li>
             </ul>
             <ul className="flex flex-col space-y-6 mt-10 pt-8 border-t border-gray-100 w-full items-end">
               {SOCIAL_MEDIA_LINKS.map((link, index) => (
                 <li key={index}>
-                  <a
+                  <motion.a
                     href={link.href}
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={toggleMenu}
                     className="flex items-center gap-4 text-lg"
+                    whileHover={{ x: -4 }}
+                    whileTap={{ scale: 0.96 }}
                   >
                     <span>{socialLabels[index]}</span>
                     {socialIcons[index]}
-                  </a>
+                  </motion.a>
                 </li>
               ))}
             </ul>

@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap");
 @import url("https://fonts.cdnfonts.com/css/satoshi");
 
 @tailwind base;
@@ -8,9 +8,139 @@
 :root {
   font-family: "satoshi", sans-serif;
   background: #ffffff;
+  --path-color: #222222;
   scroll-behavior: smooth scroll;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Space Grotesk", sans-serif;
+}
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(circle at 15% 20%, rgba(191, 169, 128, 0.23), transparent 22%),
+    radial-gradient(circle at 85% 25%, rgba(121, 149, 183, 0.16), transparent 26%),
+    linear-gradient(135deg, #f7f3ee 0%, #f3efe9 38%, #efeae3 100%);
+  background-attachment: fixed;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(rgba(17, 17, 17, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(17, 17, 17, 0.02) 1px, transparent 1px);
+  background-size: 24px 24px;
+  mask-image: radial-gradient(circle at center, black 35%, transparent 100%);
+  opacity: 0.6;
+}
+
+.bg-white {
+  background-color: rgb(255 255 255 / 70%);
+}
+
+.text-black {
+  color: #111111;
+}
+
+.border-black {
+  border-color: #111111;
+}
+
+.border-gray-100 {
+  border-color: rgb(17 17 17 / 10%);
+}
+
+.text-gray-500 {
+  color: #4b5563;
+}
+
+.text-gray-400 {
+  color: #555555;
+}
+
+.project-card-shell {
+  border-color: rgb(17 17 17 / 20%);
+}
+
+.project-card {
+  background-color: rgb(255 255 255 / 94%);
+}
+
+html.dark,
+html.dark body {
+  background:
+    radial-gradient(circle at 18% 15%, rgba(112, 92, 255, 0.18), transparent 22%),
+    radial-gradient(circle at 82% 20%, rgba(94, 151, 255, 0.16), transparent 26%),
+    linear-gradient(135deg, #090b0f 0%, #101419 36%, #0d1117 100%);
+  --path-color: #eeeeee;
+}
+
+html.dark body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 22px 22px;
+  mask-image: radial-gradient(circle at center, black 35%, transparent 100%);
+  opacity: 0.8;
+}
+
+.path-lines {
+  color: var(--path-color);
+}
+
+.dark .bg-white {
+  background-color: rgb(17 17 17 / 74%);
+}
+
+.dark .text-black {
+  color: #f5f5f5;
+}
+
+.dark .border-black {
+  border-color: #f5f5f5;
+}
+
+.dark .border-gray-100 {
+  border-color: rgb(245 245 245 / 14%);
+}
+
+.dark .text-gray-500 {
+  color: #c4c4c4;
+}
+
+.dark .text-gray-400 {
+  color: #a8a8a8;
+}
+
+.dark .project-card-shell {
+  border-color: rgb(245 245 245 / 24%);
+}
+
+.dark .project-card {
+  background-color: rgb(17 17 17 / 94%);
 }
 
 html {
   scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

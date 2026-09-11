@@ -7,11 +7,13 @@ import Schools from "./components/study";
 import Contact from "./components/contact";
 import Experience from "./components/experience";
 import { LanguageProvider } from "./context/LanguageContext";
+import BackgroundPaths from "./components/background-paths";
 
 const App = () => {
   return (
     <LanguageProvider>
-      <main className="font-light text-black antialiased bg-white lg:pr-48">
+      <main className="relative z-10 min-h-screen font-light text-black antialiased">
+        <BackgroundPaths />
         <Navbar />
         <Hero />
         <Projects />
