@@ -7,10 +7,10 @@ const Experience = () => {
   const t = translations[language].experience;
 
   return (
-    <section className="relative z-10 bg-white py-24" id="experience">
+    <section className="relative z-10 py-24" id="experience">
       <div className="mx-auto max-w-4xl">
         <motion.h2
-          className="mb-12 px-4 text-2xl lg:text-3xl font-semibold text-black"
+          className="mb-12 px-4 text-2xl lg:text-3xl font-semibold text-ink"
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.5 }}
@@ -22,24 +22,24 @@ const Experience = () => {
           {t.entries.map((exp, id) => (
             <motion.div
               key={id}
-              className="mb-10 border-l-2 border-black pl-6 dark:border-white/30"
+              className="mb-10 border-l-2 border-accent pl-6"
               initial={{ opacity: 0, x: -16 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.6, delay: id * 0.1, ease: [0.32, 0.72, 0, 1] }}
             >
               <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-1 mb-2">
-                <h3 className="text-xl lg:text-2xl font-semibold text-black">
+                <h3 className="text-xl lg:text-2xl font-semibold text-ink">
                   {exp.company}
                 </h3>
-                <p className="text-sm text-gray-500 shrink-0">
+                <p className="font-mono text-sm text-muted shrink-0">
                   {exp.startDate} - {exp.endDate}
                 </p>
               </div>
               {exp.subtitle && (
-                <p className="text-sm text-gray-500 mb-2">{exp.subtitle}</p>
+                <p className="font-mono text-sm text-muted mb-2">{exp.subtitle}</p>
               )}
-              <p className="text-black opacity-70">{exp.description}</p>
+              <p className="text-ink opacity-70">{exp.description}</p>
             </motion.div>
           ))}
         </div>

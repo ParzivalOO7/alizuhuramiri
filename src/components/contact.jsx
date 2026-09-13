@@ -8,12 +8,12 @@ const Contact = () => {
   const t = translations[language].contact;
 
   return (
-    <section className="relative z-10 bg-white pt-24 pb-12" id="contact">
+    <section className="relative z-10 pt-24 pb-12" id="contact">
       <div className="mx-auto max-w-4xl px-4">
         <motion.p
-          className="mb-5 text-xs font-medium uppercase tracking-widest text-black opacity-40"
+          className="mb-5 font-mono text-xs font-medium uppercase tracking-widest text-muted"
           initial={{ opacity: 0 }}
-          whileInView={{ opacity: 0.4 }}
+          whileInView={{ opacity: 1 }}
           viewport={{ once: true, amount: 0.5 }}
           transition={{ duration: 0.5 }}
         >
@@ -21,9 +21,9 @@ const Contact = () => {
         </motion.p>
 
         <motion.p
-          className="mb-12 max-w-[45ch] text-lg text-black opacity-60"
+          className="mb-12 max-w-[45ch] text-lg text-muted"
           initial={{ opacity: 0, y: 12 }}
-          whileInView={{ opacity: 0.6, y: 0 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6, delay: 0.1, ease: [0.32, 0.72, 0, 1] }}
         >
@@ -38,13 +38,13 @@ const Contact = () => {
         >
           <a
             href={`mailto:${CONTACT.email}`}
-            className="block text-2xl lg:text-4xl font-semibold text-black leading-none hover:opacity-60 transition-opacity duration-300 mb-4 break-all"
+            className="block text-2xl lg:text-4xl font-semibold text-accent leading-none hover:opacity-70 transition-opacity duration-300 mb-4 break-all"
           >
             {CONTACT.email}
           </a>
           <a
             href={`tel:${CONTACT.phone}`}
-            className="block text-lg text-black opacity-50 hover:opacity-100 transition-opacity duration-300"
+            className="font-mono block text-base text-muted hover:text-ink transition-colors duration-300"
           >
             {CONTACT.phone}
           </a>
@@ -58,7 +58,7 @@ const Contact = () => {
             href={link.href}
             target="_blank"
             rel="noopener noreferrer"
-            className="opacity-50 hover:opacity-100 transition-opacity duration-300"
+            className="text-muted hover:text-accent transition-colors duration-300"
             whileHover={{ y: -2 }}
           >
             {link.icon}
@@ -66,7 +66,7 @@ const Contact = () => {
         ))}
       </div>
 
-      <p className="mt-16 px-4 text-xs text-black opacity-30 text-center">
+      <p className="mt-16 px-4 font-mono text-xs text-muted text-center">
         &copy; 2026 Ali Zuhur Amiri
       </p>
     </section>
