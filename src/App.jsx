@@ -12,7 +12,7 @@ import BackgroundPaths from "./components/background-paths";
 const App = () => {
   return (
     <LanguageProvider>
-      <main className="relative z-10 min-h-screen font-light text-black antialiased">
+      <main className="relative z-10 min-h-screen font-light text-black antialiased lg:pr-48">
         <BackgroundPaths />
         <Navbar />
         <Hero />

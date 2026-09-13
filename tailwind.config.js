@@ -12,10 +12,10 @@ export default {
         mono: ["DM Mono", "monospace"],
       },
       colors: {
-        ink: "#15191d",
+        ink: "var(--ink)",
         paper: "#f8f7f1",
         canvas: "#e8ecea",
-        muted: "#737a7d",
+        muted: "var(--muted)",
         accent: "#ff6848",
         "accent-soft": "#f5a08a",
         atmosphere: "#9cc7ed",
