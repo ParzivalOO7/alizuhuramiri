@@ -15,7 +15,7 @@ const iconVariants = {
 
 const Hero = () => {
   const { language } = useLanguage();
-  const cvFile = language === "nl" ? "/alizuhuramiri/CV-NL.pdf" : "/alizuhuramiri/CV-EN.pdf";
+  const cvFile = language === "nl" ? `${import.meta.env.BASE_URL}CV-NL.pdf` : `${import.meta.env.BASE_URL}CV-EN.pdf`;
 
   return (
     <section className="relative z-10 h-[78vh] min-h-[560px] overflow-hidden">
